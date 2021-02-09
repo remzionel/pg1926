@@ -12,8 +12,8 @@ class School:
 Schools = [
     School("Atatürk", "İlkokul", "Resmi Müfredat", 1980, 24, 36, 485),
     School("Akdeniz", "OrtaOkul", "Resmi Müfredat", 1960, 20, 21, 360),
-    School("Cumhuriyet", "Lise", "Resmi-Seçmeli Müfredat", 1945, 29, 42, 750),
-    School("Anadolu", "Üniversite","Resmi-Seçmeli Müfredat, Serbest Etkinlikler, Sosyal Etkinlikler, Konferanslar", 1958, 200, 100, 1000)
+    School("Cumhuriyet", "Lise", "Resmi-Seçmeli Müfredat, Sportif Etkinlikler", 1945, 29, 42, 750),
+    School("Anadolu", "Üniversite","Resmi & Seçmeli Müfredat, Sosyal Etkinlikler, Konferanslar", 1958, 200, 100, 1000)
 ]
 
 for school in Schools:
