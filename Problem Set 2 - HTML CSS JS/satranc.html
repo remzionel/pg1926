@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Satranç Tahtası</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .baslik {
+            color: #000;
+        }
+        .buton {
+            background-color: #1f212d;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        table.satranc {
+            display: none;
+            background-color: #1f212d;
+            margin: auto;
+            border: 20px solid #783c00;
+            border-radius: 10px;
+            border-spacing: 0;
+        }
+        table.satranc td {
+            text-align: center;
+            font-weight: bold;
+        }
+        table.satranc > tbody > tr.oyun > td.rakam {
+            background: #783c00;
+            width: 15px;
+            padding: 10px;
+            font-size: 2em;
+        }
+        table.satranc > tbody > tr.harfler > td {
+            background: #783c00;
+            height: 15px;
+            padding: 5px;
+            font-size: 2em;
+        }
+        table.satranc > tbody > tr.oyun > td.kahve,
+        table.satranc > tbody > tr.oyun > td.beyaz {
+            cursor: pointer;
+            width: 70px;
+            height: 70px;
+            border: 3px solid #1f212d;
+        }
+        table.satranc > tbody td.kahve {
+            background: #eaeef1;
+        }
+        table.satranc > tbody td.beyaz {
+            background: #964b00;
+        }
+        .bt {
+            border-top-width: 6px !important;
+        }
+        .bb {
+            border-bottom-width: 6px !important;
+        }
+        .bl {
+            border-left-width: 6px !important;
+        }
+        .br {
+            border-right-width: 6px !important;
+        }
+
+    </style>
+</head>
+
+<body>
+ 
+    <h1 class="baslik">Satranç Tahtası</h1>
+    <button class="buton" onClick="getir(this);">Tahtayı Göster</button>
+    <table class="satranc">
+        <tbody>
+            <tr class="harfler">
+                <td>&nbsp;</td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="harfler">
+                <td>&nbsp;</td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        var satranc;
+        function getir(buton){
+            if(satranc){
+                return false;
+            }
+            for(var i = 1; i <= 8; i++){
+                var bt = '', bb = '';
+                if(i==1){
+                    bt = ' bt';
+                }
+                if(i==8){
+                    bb = ' bb';
+                }
+                satranc += '<tr class="oyun">'+
+                            '<td class="rakam">' + i + '</td>'+
+                            '<td class="beyaz' + bt + bb + ' bl"></td>'+
+                            '<td class="kahve' + bt + bb + '"></td>'+
+                            '<td class="beyaz' + bt + bb + '"></td>'+
+                            '<td class="kahve' + bt + bb + '"></td>'+
+                            '<td class="beyaz' + bt + bb + '"></td>'+
+                            '<td class="kahve' + bt + bb + '"></td>'+
+                            '<td class="beyaz' + bt + bb + '"></td>'+
+                            '<td class="kahve' + bt + bb + ' br"></td>'+
+                            '<td class="rakam">' + i + '</td>'+
+                        '</tr>';
+            }
+            $('.satranc > tbody > tr.harfler:first-child').after(satranc);
+            $('.satranc').fadeIn(500);
+        }
+        $('tr.oyun > td:not(.rakam)').click(function(){
+            var sutun = $($('tr.harfler > td')[$(this).index()]).text();
+            var satir = $(this).parent('tr.oyun').find('td.rakam:first-child').text();
+            var yazdir = sutun + satir.toString() + ' Hücresine tıkladınız.';
+            console.log(yazdir);
+            alert(yazdir);
+        });
+    </script>
+</body>
+</html>
