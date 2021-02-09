@@ -1,6 +1,9 @@
-# pg1926
+#pg1926
 PG1926 Kampı - Problem Setleri ve Proje Ödevi
 
+#Problem Set 1 - PYTHON: DSC Gazi ekibi tarafından verilen PYTHON problem seti.
+#Problem Set 2 - HTML CSS JS: DSC Gazi ekibi tarafından verilen HTML & CSS & JS problem seti.
+#Problem Set 3 - PHP: DSC Gazi ekibi tarafından verilen PHP problem seti.
 
 
 
